@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do You Love Me?</title>
+    <style>
+        body {
+            font-family: 'Comic Sans MS', cursive, sans-serif;
+            background-color: #fff0f5;
+            color: #4b0082;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            color: #ff1493;
+            font-size: 2.5rem;
+        }
+        .gif-container {
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            color: white;
+            background-color: #ff1493;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+        button:hover {
+            background-color: #ff69b4;
+            transform: scale(1.1);
+        }
+        #noo-button {
+            position: relative;
+        }
+        .special-button {
+            background: linear-gradient(45deg, #ff1493, #ff69b4);
+            padding: 15px 30px;
+            font-size: 20px;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(255, 20, 147, 0.4);
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+    </style>
+    <script>
+        let nooClickCount = 0;
+
+        function handleYes() {
+            document.body.innerHTML = `
+                <h1>Mujhe pata tha tum maan jaogi! Love youu too baby 💝✨🥰💫</h1>
+                <div class="gif-container">
+                    <img src="https://media.giphy.com/media/Z21HJj2kz9uBG/giphy.gif" alt="Kissing Cats GIF" width="300">
+                </div>
+                
+                <h2>You're the best! 🌸💖🦋💫</h2>
+                <button class="special-button" onclick="openSpecialMessage()">some thing special click here 💌</button>
+            `;
+        }
+
+        function handleNo() {
+            nooClickCount++;
+            if (nooClickCount === 1) {
+                document.body.innerHTML = `
+                    <h1>Please yess press kar do naaa 😢</h1>
+                    <div class="gif-container">
+                        <img src="https://media.giphy.com/media/L95W4wv8nnb9K/giphy.gif" alt="Sad Cat GIF" width="300">
+                    </div>
+                    <button onclick="handleYes()">Yess</button>
+                    <button id="noo-button" onclick="handleNo()">Noo</button>
+                `;
+            } else if (nooClickCount === 2) {
+                document.body.innerHTML = `
+                    <h1>Pls baby maan jao naaa 🥺💕</h1>
+                    <div class="gif-container">
+                        <img src="https://media.giphy.com/media/MDJ9IbxxvDUQM/giphy.gif" alt="Cute Cat Love GIF" width="300">
+                    </div>
+                    <button onclick="handleYes()">Yess</button>
+                    <button id="noo-button" onclick="handleNo()">Noo</button>
+                `;
+            } else {
+                const nooButton = document.getElementById('noo-button');
+                nooButton.style.position = 'absolute';
+                nooButton.style.top = `${Math.random() * 80 + 10}%`;
+                nooButton.style.left = `${Math.random() * 80 + 10}%`;
+            }
+        }
+
+        function openSpecialMessage() {
+            document.body.innerHTML = `
+                <h1>Our Love Story 💑</h1>
+                
+                <h2>Every moment with you is magical ✨</h2>
+                <p style="font-size: 20px; margin: 20px;">
+                    You make my heart smile 💝<br>
+                    You are my sunshine 🌞<br>
+                    My perfect match 🔐<br>
+                    Forever yours 💕
+                </p>
+                <div class="gif-container">
+                    <img src="https://media.giphy.com/media/cLS1cfxvGOPVpf9g3y/giphy.gif" alt="Love Cats GIF" width="300">
+                </div>
+                <h3>I Love You Forever 💖</h3>
+                <button class="special-button" onclick="finalMessage()">Press Once Again 🌹</button>
+            `;
+        }
+
+        function finalMessage() {
+            document.body.innerHTML = `
+                <h1>You Complete Me 💑✨</h1>
+                <div class="gif-container">
+                    <img src="https://media.giphy.com/media/26BRv0ThflsHCqDrG/giphy.gif" alt="Love Hearts GIF" width="300">
+                </div>
+                <h2>My Heart Beats For You 💓</h2>
+                <p style="font-size: 20px; margin: 20px;">
+                    You're my favorite notification 📱<br>
+                    My best good morning 🌅<br>
+                    My sweetest dream 💫<br>
+                    My perfect goodnight 🌙<br>
+                    My everything 💝
+                </p>
+                
+                <h3>Forever & Always 💖</h3>
+            `;
+        }
+    </script>
+</head>
+<body>
+    <h1>Do You Love Me? 🥰</h1>
+    <div class="gif-container">
+        <img src="https://media.giphy.com/media/E2d2tsgz7iHo4/giphy.gif" alt="Cute Cat Love GIF" width="300">
+    </div>
+    <button onclick="handleYes()">Yess</button>
+    <button id="noo-button" onclick="handleNo()">Noo</button>
+</body>
+</html>
